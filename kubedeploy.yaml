@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ssheikh24-eta-deploy
   labels:
-    app: ssheikh24-eta-deploy-lbl
+    app: ssheikh24-eta-app
 spec:
   replicas: 3
   selector:
@@ -25,11 +25,10 @@ kind: Service
 metadata:
   name: ssheikh24-eta-np-service
   labels:
-    app: ssheikh24-eta-np-app
+    app: ssheikh24-eta-service
 spec:
   selector:
-    app: ssheikh24-eta-deploy-lbl
-
+    app: ssheikh24-eta-app
   type: NodePort
   ports:
   - nodePort: 31028
